@@ -5,13 +5,17 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 
-$(document).on("keypress", function(){
-   if(!started){
-    $("#level-title").text("Level - " + level);
-    nextSequence();
-   }
-  started = true;
+
+$(document).ready(function(){
+  $(document).on("touchstart keypress", function(){
+    if(!started){
+     $("#level-title").text("Level - " + level);
+     nextSequence();
+    }
+   started = true;
+ })
 })
+
 
 
 
